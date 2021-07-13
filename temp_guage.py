@@ -2,12 +2,12 @@ import subprocess
 from time import sleep
 
 def checkTemp():
-    val = subprocess.Popen(["/opt/vc/bin/vcgencmd", "measure_temp"], stdout=subprocess.PIPE)
-    return val
+    return subprocess.getstatusoutput('vcgencmd measure_temp') 
 
 def main():
-    temp = checkTemp()
-    print(temp);
+    err, temp = checkTemp()
+    if not(err):
+        print(temp);
 
 if __name__ == '__main__':
     main();
