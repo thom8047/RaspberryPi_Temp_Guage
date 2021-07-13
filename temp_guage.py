@@ -2,7 +2,8 @@ import subprocess
 from time import sleep
 
 def checkTemp():
-    return subprocess.Popen(["/opt/vc/bin/vcgencmd", "measure_temp"], stdout=subprocess.PIPE)
+    val = subprocess.Popen(["/opt/vc/bin/vcgencmd", "measure_temp"], stdout=subprocess.PIPE)
+    return val
 
 def main():
     temp = checkTemp()
