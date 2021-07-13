@@ -6,11 +6,11 @@ def checkTemp():
 
 def main():
     while (True):
-        print(time.time())
         err, temp = checkTemp()
         if not(err):
+            print(time.ctime())
             print(temp);
-        time.sleep(1)
+            time.sleep(1)
 
 if __name__ == '__main__':
     main();
