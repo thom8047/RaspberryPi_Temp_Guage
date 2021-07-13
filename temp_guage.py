@@ -7,7 +7,7 @@ def checkTemp():
 def main():
     while (True):
         time.sleep(1)
-        continue
+        
         err, temp = checkTemp()
         if not(err):
             print(time.ctime())
